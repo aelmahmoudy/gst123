@@ -1272,6 +1272,8 @@ main (gint   argc,
   player.playbin = Compat::create_playbin ("play");
   if (options.novideo)
     {
+      // TODO: set text-sink to an appsink to support display of 
+      // (podcast transcripts on the console
       GstElement *fakesink = gst_element_factory_make ("fakesink", "novid");
       g_object_set (G_OBJECT (player.playbin), "video-sink", fakesink, NULL);
     }
